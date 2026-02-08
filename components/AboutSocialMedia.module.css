@@ -1,0 +1,158 @@
+/* AboutSocialMedia.module.css */
+
+.section {
+  position: relative;
+  background-color: #1B3022; /* Deep Forest Green */
+  padding: 6rem 2rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(/about-social-bg.jpeg) no-repeat center center;
+  background-size: cover;
+}
+
+/* Ambient Background Glow */
+.glowBackground {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(197, 160, 89, 0.15) 0%, rgba(27, 48, 34, 0) 70%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Header Section */
+.header {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.badge {
+  font-family: 'Montserrat', sans-serif;
+  color: #1B3022;
+  background-color: #C5A059; /* Stella Gold */
+  padding: 0.5rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  color: #F9F5EB; /* Antique Cream for contrast against dark bg */
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.highlight {
+  color: #C5A059; /* Stella Gold */
+}
+
+.description {
+  font-family: 'Montserrat', sans-serif;
+  color: #F9F5EB;
+  opacity: 0.8;
+  font-size: 1.1rem;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+/* Social Grid Layout */
+.socialGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  position: relative;
+  padding: 2rem;
+}
+
+/* The Glass Card */
+.socialCard {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(197, 160, 89, 0.3); /* Gold border with low opacity */
+  border-radius: 24px; /* Soft square like the icons in image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  transition: border-color 0.3s ease;
+}
+
+.socialCard:hover {
+  border-color: #C5A059;
+  background: rgba(197, 160, 89, 0.1);
+}
+
+.centerCard {
+  width: 140px;
+  height: 140px;
+  background: linear-gradient(135deg, rgba(197, 160, 89, 0.2), rgba(27, 48, 34, 0.8));
+  border: 1px solid #C5A059;
+  z-index: 2;
+  box-shadow: 0 0 30px rgba(197, 160, 89, 0.2);
+}
+
+/* Icons */
+.icon {
+  color: #F9F5EB;
+  transition: color 0.3s ease;
+}
+
+.socialCard:hover .icon {
+  color: #C5A059;
+}
+
+.centerIcon {
+  color: #C5A059;
+  filter: drop-shadow(0 0 5px rgba(197, 160, 89, 0.5));
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+  }
+  
+  .socialGrid {
+    gap: 1rem;
+  }
+  
+  .socialCard {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .centerCard {
+    width: 110px;
+    height: 110px;
+  }
+}

@@ -1,0 +1,245 @@
+.sectionWrapper {
+    background-color: #1B3022; /* Deep Forest Green */
+    padding: 120px 0;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+    background: url(/about-video-bg.jpeg) no-repeat center center;
+    background-size: cover; 
+}
+
+/* Header Section */
+.headerContainer {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 5%;
+}
+
+.mainTitle {
+    font-family: 'Montserrat', sans-serif;
+    color: #C5A059; /* Antique Cream */
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 500;
+    margin: 0;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+
+.divider {
+    height: 1px;
+    background-color: #C5A059; /* Stella Gold */
+    width: 80px;
+    margin: 0 auto;
+    margin-bottom: 15px;
+    opacity: 0.6;
+}
+
+.goldSubtitle {
+    font-family: 'Montserrat', sans-serif;
+    color: #F9F5EB; /* Stella Gold */
+    font-size: 1.1rem;
+    max-width: 650px;
+    margin: 0 auto;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    font-weight: 500;
+}
+
+/* Video Container */
+.videoContainer {
+    position: relative;
+    width: 95vw;
+    max-width: 1600px;
+    border-radius: 24px;
+    overflow: hidden;
+    /* Strong shadow to distinguish from the Deep Forest Green background */
+    box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6), 
+                0 0 20px rgba(0, 0, 0, 0.3);
+    aspect-ratio: 16 / 9;
+    /* background-color: #000; */
+}
+
+.mainVideo {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover; */
+    display: block;
+    cursor: pointer;
+}
+
+/* Glassmorphism Controls Overlay */
+.controlsOverlay {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    padding: 0 40px;
+    z-index: 5;
+}
+
+.glassControlBar {
+    width: 100%;
+    max-width: 1000px;
+    background: rgba(15, 15, 25, 0.7); /* Dark semi-transparent base */
+    backdrop-filter: blur(15px); /* Reference image blur */
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 20px;
+    padding: 20px 30px 45px 30px; /* Extra bottom padding for progress bar */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.controlGroup {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: #F9F5EB;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.controlBtn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: none;
+    color: #C5A059; /* Stella Gold */
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.timeDisplay {
+    font-size: 0.85rem;
+    opacity: 0.8;
+    letter-spacing: 0.5px;
+}
+
+.centerControls {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.mainPlayBtn {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background-color: #C5A059; /* Reference vibrant blue */
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* box-shadow: 0 0 20px rgba(99, 102, 241, 0.4); */
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mainPlayBtn:hover {
+    transform: scale(1.1);
+    /* background-color: #4f46e5; */
+}
+
+.subIcon {
+    color: #F9F5EB;
+    opacity: 0.7;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.subIcon:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Progress Bar at the base of the control bar */
+.progressContainer {
+    position: absolute;
+    bottom: 22px;
+    left: 30px;
+    right: 30px;
+}
+
+.progressBar {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 2px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.progressFilled {
+    width: 45%; /* Match figure progress */
+    height: 100%;
+    background: #C5A059;
+    position: relative;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 1024px) {
+    .glassControlBar {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sectionWrapper {
+        padding: 80px 0;
+    }
+    
+    .headerContainer {
+        margin-bottom: 40px;
+    }
+
+    .mainTitle {
+        font-size: 2rem;
+    }
+
+    .glassControlBar {
+        padding: 15px 15px 35px 15px;
+        flex-wrap: wrap;
+    }
+
+    .centerControls {
+        order: -1;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+
+    .timeDisplay {
+        display: none;
+    }
+}
+
+.iconBtn {
+    background: none;
+    border: none;
+    color: #F9F5EB;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.iconBtn:hover {
+    opacity: 1;
+}
+
+.progressFilled {
+    height: 100%;
+    background: #C5A059;
+    transition: width 0.2s linear; /* Smoothly moves with the video */
+    width: 0%; /* Initial state */
+}

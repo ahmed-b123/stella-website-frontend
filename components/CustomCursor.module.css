@@ -1,0 +1,22 @@
+.cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 40px; /* Adjust size based on your PNG */
+  height: 40px;
+  pointer-events: none; /* Allows clicking through the image */
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Centering the image on the mouse point */
+  margin-left: -20px; 
+  margin-top: -20px;
+  will-change: transform;
+}
+
+.cursorImage {
+  width: 100%;
+  height: auto;
+  user-select: none;
+}

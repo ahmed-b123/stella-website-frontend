@@ -1,0 +1,76 @@
+.aboutContainer {
+  background-color: #1B3022; /* Deep Forest Green */
+  color: #F9F5EB; /* Antique Cream */
+  padding: 80px 20px;
+  font-family: 'Montserrat', sans-serif;
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headerSection {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.mainTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.divider {
+  width: 60px;
+  border: 1px solid #C5A059; /* Stella Gold */
+  margin: 15px auto;
+}
+
+.subtitle {
+  color: #C5A059; /* Golden subtitle as requested */
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.cardGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid rgba(197, 160, 89, 0.2);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: #C5A059;
+}
+
+.icon {
+  color: #C5A059;
+  margin-bottom: 20px;
+}
+
+.cardTitle {
+  font-family: 'Montserrat', sans-serif;
+  color: #C5A059; /* Golden card titles */
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.cardText {
+  line-height: 1.6;
+  font-size: 1rem;
+  color: #F9F5EB;
+}

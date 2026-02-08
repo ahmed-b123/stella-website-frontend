@@ -1,0 +1,77 @@
+.paginationWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  padding-bottom: 10px;
+  font-family: 'Montserrat', sans-serif;
+  gap: 8px;
+}
+
+.navButton {
+  background: none;
+  border: 1px solid rgba(27, 48, 34, 0.1);
+  color: #1B3022;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.navButton:hover:not(:disabled) {
+  border-color: #C5A059;
+  color: #C5A059;
+}
+
+.navButton:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.pageNumbers {
+  display: flex;
+  gap: 8px;
+}
+
+.pageBtn {
+  background: none;
+  border: 1px solid transparent;
+  color: #1B3022;
+  width: 45px;
+  height: 45px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+.pageBtn:hover {
+  background-color: rgba(197, 160, 89, 0.1); /* Light Stella Gold tint */
+}
+
+.activePage {
+  background-color: #1B3022 !important;
+  color: #F9F5EB !important;
+}
+
+.dots {
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 10px;
+  color: rgba(27, 48, 34, 0.4);
+  letter-spacing: 2px;
+}
+
+@media (max-width: 768px) {
+  .navButton, .pageBtn {
+    width: 38px;
+    height: 38px;
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,103 @@
+.bannerWrapper {
+  background-color: #F9F5EB; /* Antique Cream background */
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  position: relative;
+  padding-top: 70px;
+  background: url(/menu-banner-bg.jpeg) no-repeat center center;
+  background-size: cover;
+}
+
+.bannerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  height: calc(100vh - 80px); 
+  width: 90vw;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.contentSide {
+  flex: 1;
+  max-width: 500px;
+  z-index: 2;
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #C5A059; /* Deep Forest Green */
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.goldText {
+  color: #C5A059; /* Stella Gold */
+}
+
+.description {
+  font-family: 'Montserrat', sans-serif;
+  color: #F9F5EB;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 35px;
+  opacity: 0.8;
+}
+
+.ctaButton {
+  font-family: 'Montserrat', sans-serif;
+  background-color: transparent;
+  border: 1px solid #C5A059;
+  color: #C5A059;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  background-color: #C5A059;
+  color: #F9F5EB;
+}
+
+.imageSide {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+}
+
+.heroImage {
+  width: 120%;
+  height: 80%;
+  /* Pointing to your public directory assets */
+  background-image: url('/banner-hero.png'); 
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bannerContainer {
+    flex-direction: column;
+    padding-top: 50px;
+    text-align: center;
+  }
+  
+  .contentSide {
+    max-width: 100%;
+    margin-bottom: 40px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+}

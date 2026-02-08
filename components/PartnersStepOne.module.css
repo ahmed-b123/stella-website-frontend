@@ -1,0 +1,123 @@
+.mainWrapper {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #F9F5EB; /* Antique Cream */
+  font-family: 'Montserrat', sans-serif;
+}
+
+.formSection {
+  flex: 1;
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF; /* Clean white background for the form side */
+}
+
+.stepContainer {
+  width: 100%;
+  max-width: 400px;
+}
+
+.formHeader {
+  margin-bottom: 32px;
+}
+
+.formTitle {
+  color: #1B3022;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+/* Replicating the Screenshot Input Style */
+.inputStack {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inputGroup label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #344054; /* Standard neutral dark for labels */
+}
+
+.textInput {
+  padding: 12px 14px;
+  border: 1px solid #D0D5DD; /* The classic Screenshot border color */
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Montserrat';
+  color: #1B3022;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  transition: all 0.2s ease;
+}
+
+.textInput:focus {
+  outline: none;
+  border-color: #C5A059; /* Stella Gold focus */
+  box-shadow: 0px 0px 0px 4px rgba(197, 160, 89, 0.1);
+}
+
+.textInput::placeholder {
+  color: #667085;
+}
+
+/* Button & Progress Dots */
+.continueBtn {
+  width: 100%;
+  margin-top: 24px;
+  background-color: #1B3022; /* Deep Forest Green */
+  color: #FFFFFF;
+  padding: 12px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: 1px solid #1B3022;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.continueBtn:hover {
+  background-color: #2a4a34;
+}
+
+.dotsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #EAECF0;
+}
+
+.dotActive {
+  background: #1B3022;
+}
+
+/* Visual Section (Flex 2) */
+.visualSection {
+  flex: 2;
+  position: relative;
+  background-color: #1B3022;
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}

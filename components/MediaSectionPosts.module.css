@@ -1,0 +1,108 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding-left: 100px;
+}
+
+/* Card Grid Layout */
+.cardGrid {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  height: 600px;
+  margin-top: 40px;
+}
+
+.card {
+  position: absolute;
+  width: 480px;
+  height: 280px;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Positioning to match screenshot */
+.cardOne {
+  top: 0;
+  left: 0%;
+  z-index: 5;
+}
+
+.cardTwo {
+  top: 120px;
+  right: 10%;
+  z-index: 3;
+}
+
+.cardThree {
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  /* Applying a slight blur to background card if desired */
+  filter: brightness(0.9);
+}
+
+/* Overlays & Content */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 60%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+.iconContainer {
+  align-self: flex-end;
+}
+
+.arrowIcon {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 1.2rem;
+}
+
+.cardTitle {
+  font-family: 'Montserrat', sans-serif;
+  color: #C5A059; /* Golden as per instructions */
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  line-height: 2rem;
+}
+
+.cardMeta {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+.dot {
+  margin: 0 5px;
+  color: #C5A059;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  z-index: 10;
+}

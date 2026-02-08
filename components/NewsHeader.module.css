@@ -1,0 +1,69 @@
+.headerSection {
+  padding: 40px 5%; /* Reduced top/bottom padding */
+  padding-top: 10px;
+  display: flex;
+  justify-content: center;
+  width: 95vw;
+  max-width: 1600px;
+}
+
+.banner {
+  /* Using a slightly more "parchment" tone to stand out from Antique Cream */
+  background-color: #F1ECE1; 
+  padding: 50px 20px; /* Condensed padding */
+  border-radius: 12px; /* Sharper, more modern radius */
+  width: 100%;
+  text-align: center;
+  /* Added a subtle border for visibility */
+  border: 1px solid rgba(27, 48, 34, 0.05);
+}
+
+.eyebrow {
+  color: #1B3022;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 0.65rem; /* Smaller eyebrow */
+  font-weight: 600;
+  margin-bottom: 10px;
+  opacity: 0.6;
+}
+
+.headline {
+  color: #1B3022;
+  font-family: 'Montserrat', sans-serif;
+  /* Significantly smaller font scale */
+  font-size: clamp(1.1rem, 2.5vw, 1.6rem); 
+  font-weight: 600;
+  line-height: 1.6;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+.goldText {
+  color: #C5A059;
+}
+
+.iconInline {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 2px;
+  color: #1B3022;
+  position: relative;
+  top: -1px;
+  opacity: 0.9;
+}
+
+.goldText + svg {
+  color: #C5A059;
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding: 30px 15px;
+  }
+  
+  .headline {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}

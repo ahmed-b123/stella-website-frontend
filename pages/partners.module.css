@@ -1,0 +1,194 @@
+.mainWrapper {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #F9F5EB;
+  font-family: 'Montserrat', sans-serif;
+  overflow: hidden;
+}
+
+/* LEFT SIDE: FORM (Flex 1) */
+.formSection {
+  flex: 1;
+  background-color: #F9F5EB;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.stepContainer {
+  width: 100%;
+  max-width: 450px;
+}
+
+.formHeader {
+  margin-bottom: 40px;
+}
+
+.formTitle {
+  color: #1B3022;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.stepIndicator {
+  color: #C5A059;
+  font-weight: 600;
+  font-size: 0.8rem;
+  margin-top: 5px;
+  display: block;
+}
+
+/* Input Styling */
+.row {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+}
+
+.inputGroup {
+  margin-bottom: 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGroup label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 700;
+  color: #1B3022;
+  margin-bottom: 4px;
+  opacity: 0.9;
+}
+
+.minimalInput {
+  width: 100%;
+  padding: 10px 0;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(27, 48, 34, 0.2);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #1B3022;
+  transition: all 0.3s ease;
+}
+
+.minimalInput:focus {
+  outline: none;
+  border-bottom: 1px solid #C5A059;
+}
+
+.minimalInput::placeholder {
+  color: #ccc;
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+/* Actions */
+.continueBtn {
+  width: 100%;
+  background-color: #1B3022;
+  color: #F9F5EB;
+  padding: 18px;
+  font-family: 'Montserrat';
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: none;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(27, 48, 34, 0.1);
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #C5A059;
+  transform: scale(1.3);
+}
+
+/* RIGHT SIDE: VISUALS (Flex 2) */
+.visualSection {
+  flex: 2;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 100px;
+  color: #F9F5EB;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(27, 48, 34, 0) 20%, rgba(27, 48, 34, 0.9) 100%);
+  z-index: 1;
+}
+
+.contentBox {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.goldAccent {
+  color: #C5A059;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.heroTitle {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+}
+
+@media (max-width: 1024px) {
+  .mainWrapper { flex-direction: column; }
+  .visualSection { flex: none; height: 50vh; padding: 40px; }
+  .formSection { padding: 40px 20px; }
+}

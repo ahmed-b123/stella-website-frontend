@@ -1,0 +1,65 @@
+.pageWrapper {
+  background-color: #F9F5EB; /* Antique Cream */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  background: url(../public/navbar-bg.jpeg) no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.mainContent {
+  flex: 1; /* Pushes footer to bottom if content is short */
+  width: 100%;
+  padding-top: 100px; /* Accounts for fixed/absolute navbar height */
+}
+
+.placeholderSection {
+  padding: 120px 5%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.contentGateway {
+  max-width: 800px;
+}
+
+.label {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  color: #C5A059; /* Stella Gold */
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  color: #1B3022; /* Deep Forest Green */
+  font-size: clamp(3rem, 10vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  font-family: 'Montserrat', sans-serif;
+  color: #1B3022;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.8;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .placeholderSection {
+    padding: 80px 20px;
+  }
+}

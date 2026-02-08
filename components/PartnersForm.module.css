@@ -1,0 +1,259 @@
+.mainWrapper {
+  display: flex;
+  min-height: 100vh;
+  width: 100%;
+  background-color: #F9F5EB;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.formSection {
+  flex: 1;
+  padding: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+}
+
+.stepContainer {
+  width: 100%;
+  max-width: 420px;
+}
+
+.formHeader {
+  margin-bottom: 32px;
+}
+
+.formTitle {
+  color: #1B3022;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.inputStack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inputGroup label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #344054;
+}
+
+/* Prefix Input Style */
+.prefixWrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #D0D5DD;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+}
+
+.prefix {
+  background-color: #F9FAFB;
+  border-right: 1px solid #D0D5DD;
+  padding: 10px 14px;
+  color: #667085;
+  font-size: 0.9rem;
+}
+
+.innerInput {
+  border: none;
+  padding: 10px 14px;
+  flex: 1;
+  font-family: 'Montserrat';
+  font-size: 1rem;
+  outline: none;
+}
+
+/* Radio Button Style */
+.radioList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  color: #1B3022;
+}
+
+.customRadio {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #D0D5DD;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.radioActive {
+  border-color: #C5A059;
+}
+
+.radioInner {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #C5A059;
+}
+
+/* Final Submit Button */
+.submitBtn {
+  width: 100%;
+  margin-top: 32px;
+  background-color: #1B3022;
+  color: #FFFFFF;
+  padding: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.3s;
+}
+
+.submitBtn:hover {
+  opacity: 0.9;
+}
+
+.dotsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #EAECF0;
+}
+
+.dotActive {
+  background: #1B3022;
+}
+
+/* Visual Section */
+.visualSection {
+  flex: 2;
+  position: relative;
+  background-color: #1B3022;
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+}
+
+/* ... Previous mainWrapper, formSection, etc. ... */
+
+.inputStack {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inputGroup label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #344054;
+}
+
+/* Textarea Specific Styling */
+.textArea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px 14px;
+  border: 1px solid #D0D5DD;
+  border-radius: 8px;
+  font-family: 'Montserrat';
+  font-size: 1rem;
+  color: #1B3022;
+  resize: vertical;
+  box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+  transition: all 0.2s ease;
+}
+
+.textArea:focus {
+  outline: none;
+  border-color: #C5A059;
+  box-shadow: 0px 0px 0px 4px rgba(197, 160, 89, 0.1);
+}
+
+.charCounter {
+  font-size: 0.8rem;
+  color: #667085;
+  margin-top: 4px;
+}
+
+/* Prefixed Inputs (LinkedIn/Site) */
+.prefixWrapper {
+  display: flex;
+  align-items: center;
+  border: 1px solid #D0D5DD;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.prefix {
+  background-color: #F9FAFB;
+  border-right: 1px solid #D0D5DD;
+  padding: 10px 14px;
+  color: #667085;
+  font-size: 0.9rem;
+}
+
+.innerInput {
+  border: none;
+  padding: 10px 14px;
+  flex: 1;
+  font-family: 'Montserrat';
+  font-size: 1rem;
+  outline: none;
+}
+
+.submitBtn {
+  width: 100%;
+  margin-top: 32px;
+  background-color: #1B3022; /* Deep Forest Green */
+  color: #FFFFFF;
+  padding: 14px;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+.submitBtn:hover {
+  background-color: #C5A059; /* Stella Gold hover */
+  color: #1B3022;
+}
+
+/* ... Keep dotsContainer and visualSection as before ... */

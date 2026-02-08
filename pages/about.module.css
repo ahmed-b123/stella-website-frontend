@@ -1,0 +1,46 @@
+.aboutContainer {
+  background-color: #F9F5EB; /* Antique Cream */
+  color: #1B3022; /* Deep Forest Green */
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 20px;
+  text-align: center;
+  background-color: #1B3022; /* Deep Forest Green */
+  color: #F9F5EB; /* Antique Cream */
+}
+
+.heroSection h1 {
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 700;
+  color: #C5A059; /* Stella Gold */
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+}
+
+.contentWrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Custom transition utility */
+.goldDivider {
+  height: 2px;
+  width: 60px;
+  background-color: #C5A059;
+  margin: 2rem auto;
+}

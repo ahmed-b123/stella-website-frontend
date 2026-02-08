@@ -1,0 +1,518 @@
+/* --- BASE NAVBAR STYLES --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  color: white;
+  transition: all 0.4s ease;
+}
+
+.navLogo img {
+  height: 38px;
+  width: auto;
+  cursor: pointer;
+}
+
+.navLinks {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- The Link Text --- */
+.navItem a {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7); /* Slightly dimmer start for contrast */
+  font-size: 0.95rem;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 8px; /* Give space for the horizon line */
+
+  /* Montserrat Font */
+  font-family: 'Montserrat', sans-serif;
+
+  /* The "Breathing" Transition */
+  transition: color 0.4s ease, letter-spacing 0.4s ease, text-shadow 0.4s ease;
+
+  /* Ensure text renders crisply during animation */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* --- The Horizon Line (The Underline) --- */
+.underline {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Occupy full width, but scale it down */
+  height: 2px;
+
+  /* Instead of solid color, we use a light beam gradient */
+  background: linear-gradient(
+    90deg, 
+    rgba(197, 160, 89, 0) 0%, 
+    rgba(197, 160, 89, 1) 50%, 
+    rgba(197, 160, 89, 0) 100%
+  );
+
+  /* Start hidden in the center */
+  transform: scaleX(0);
+  transform-origin: center;
+  opacity: 0;
+
+  /* Smooth expansion */
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease;
+
+  /* Add a glow to the line */
+  box-shadow: 0 -2px 10px rgba(197, 160, 89, 0.5);
+}
+
+/* --- HOVER STATES --- */
+
+.navItem a:hover,
+.activeLink {
+  color: #ffffff !important; /* Pure white text for max contrast */
+  letter-spacing: 0.05em; /* Cinematic expansion */
+
+  /* Subtle backlight glow on the text */
+  text-shadow: 0 0 8px rgba(197, 160, 89, 0.4);
+}
+
+/* Trigger the Horizon Line */
+.navItem a:hover .underline,
+.activeLink .underline {
+  transform: scaleX(1); /* Expand from center to edges */
+  opacity: 1;
+}
+
+/* Optional: Make the active link slightly brighter than hover */
+.activeLink .underline {
+  background: linear-gradient(
+    90deg, 
+    rgba(197, 160, 89, 0) 0%, 
+    #C5A059 50%, 
+    rgba(197, 160, 89, 0) 100%
+  );
+  box-shadow: 0 -2px 15px rgba(197, 160, 89, 0.8); /* Stronger glow for active page */
+}
+/* --- ACTIONS & ICONS --- */
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.iconWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  /* We define the hover scope here so the badge and icon react together */
+  cursor: pointer; 
+}
+
+/* --- The Icon (The Basket) --- */
+.iconBtn {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  outline: none;
+
+  /* Exotic Setup */
+  transform-origin: center bottom; /* Pivot from the bottom */
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); /* "Back-out" easing for a bouncy stop */
+}
+
+/* --- The Badge (The Satellite) --- */
+.badge {
+  position: absolute;
+  top: -3px;
+  right: -2px;
+
+  /* Gradient matching your button for consistency */
+  background: linear-gradient(135deg, #C5A059 0%, #9d7c4a 100%);
+  color: #F9F5EB;
+  font-size: 0.65rem;
+  min-width: 21px;
+  height: 21px;
+  border-radius: 14px; /* Perfectly round pill */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  padding: 0 4px;
+  padding-top: 2px;
+  pointer-events: none;
+
+  /* Montserrat Font for consistency */
+  font-family: 'Montserrat', sans-serif;
+
+  /* Animation Setup */
+  z-index: 10;
+  box-shadow: 0 0 0 rgba(197, 160, 89, 0);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Bouncy spring effect */
+}
+
+/* --- THE HOVER MAGIC --- */
+
+/* 1. Animate the Basket */
+.iconWrapper:hover .iconBtn {
+  color: #C5A059; /* Turn Gold */
+  transform: translateY(-4px) rotate(-8deg) scale(1.1); /* Lift, Tilt, and Grow */
+}
+
+/* 2. Animate the Badge */
+.iconWrapper:hover .badge {
+  /* The badge moves in opposition to the basket (Parallax) */
+  top: -8px; 
+  right: -6px;
+  transform: scale(1.1);
+
+  /* Add a glowing pulse to draw the eye */
+  box-shadow: 0 4px 12px rgba(197, 160, 89, 0.6);
+  animation: pulseGold 1.5s infinite;
+}
+
+/* Optional: Keyframe for a living "heartbeat" on the badge while hovering */
+@keyframes pulseGold {
+  0% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.7); }
+  70% { box-shadow: 0 0 0 6px rgba(197, 160, 89, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
+}
+
+.ctaButton {
+  /* --- Core Styling --- */
+  /* We use a 3-stop gradient to create a hidden "reflection" line */
+  background: linear-gradient(
+    110deg, 
+    #9d7c4a 0%, 
+    #C5A059 45%, 
+    #ffeeb0 50%, /* The "Shine" Line */
+    #C5A059 55%, 
+    #9d7c4a 100%
+  );
+
+  /* Make the background huge so we can slide it */
+  background-size: 250% 100%;
+  background-position: 100% 0; 
+
+  color: white;
+  padding: 9px 22px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+
+  /* Using your preferred font */
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 600; /* Bumped slightly for better read on gold */
+  margin-left: 0.7rem;
+
+  /* --- Animation Setup --- */
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth, snappy timing */
+  box-shadow: 0 0 0 rgba(197, 160, 89, 0);
+}
+
+.ctaButton:hover {
+  /* 1. The Sweep: Move the gradient to pull the shine across */
+  background-position: 0 0; 
+
+  /* 2. The Lift: Raise the button and add a gold glow */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -5px rgba(197, 160, 89, 0.5);
+
+  /* 3. The Cinematic Text: subtle expansion */
+  letter-spacing: 0.05em;
+
+  /* Optional: Make the white text pop more against the shine */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Optional: Active state for clicking (press down effect) */
+.ctaButton:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px -3px rgba(197, 160, 89, 0.5);
+}
+
+/* --- STICKY & ALT MODES --- */
+.sticky {
+  position: fixed;
+  background: url('/navbar-bg.jpeg') no-repeat center center;
+  background-size: cover;
+  padding: 1rem 4rem;
+  box-shadow: 0 10px 15px -3px rgba(27, 48, 34, 0.1);
+  animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.altMode {
+  padding: 1rem 4rem;
+}
+
+.sticky .iconBtn,
+.altMode .iconBtn,
+.sticky .navItem a,
+.altMode .navItem a {
+  color: #1B3022;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* --- MOBILE & RESPONSIVE --- */
+.menuToggle {
+  display: none;
+  outline: none;
+}
+
+.sticky .menuToggle {
+  color: #1B3022;
+}
+
+@media (max-width: 1024px) {
+
+  .navbar,
+  .sticky,
+  .altMode {
+    padding: 1rem 1.5rem;
+  }
+
+  .navLinks,
+  .desktopOnly {
+    display: none;
+  }
+
+  .menuToggle {
+    display: flex;
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .menuToggle.altModeIcon {
+    color: #1B3022;
+  }
+
+  /* --- OVERLAY --- */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 1400;
+  }
+
+  /* --- MOBILE DRAWER --- */
+  .mobileDrawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 85%;
+    max-width: 400px;
+    height: 100vh;
+    background-color: #F9F5EB;
+    background: url(../public/mobile-menu-bg.jpeg) no-repeat center center;
+    background-size: cover;
+    z-index: 1500;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .drawerHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    border-bottom: 1px solid rgba(27, 48, 34, 0.05);
+  }
+
+  .drawerLogo {
+    height: 32px;
+    width: auto;
+  }
+
+  .closeBtn {
+    background: none;
+    border: none;
+    color: #1B3022;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .mobileNavContent {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    flex-grow: 1;
+  }
+
+  .mobileNavLink {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: #1B3022;
+  }
+
+  .linkIcon {
+    color: #C5A059;
+    display: flex;
+    align-items: center;
+  }
+
+  .mobileActive {
+    color: #C5A059 !important;
+    font-weight: 600;
+  }
+
+  /* --- DRAWER FOOTER --- */
+  .drawerFooter {
+    padding: 2rem;
+    text-align: center;
+    padding-bottom: 80px;
+  }
+
+  .divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #C5A059, transparent);
+    margin-bottom: 1.5rem;
+    opacity: 0.3;
+  }
+
+  .socialLabel {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #1B3022;
+    margin-bottom: 1rem;
+    opacity: 0.6;
+  }
+
+  .socialIcons {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    color: #1B3022;
+  }
+}
+
+.navbarLanguagesContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 12px;
+  cursor: pointer;
+}
+.navbarLanguagesContainer:hover {
+  transition: transform 0.3s ease;
+  transform: scale(1.05) translateY(-3px);
+}
+
+.navbarLanguagesContainer img {
+  border-radius: 4px;
+}
+
+.navbarLanguagesContainer p {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.languagesContainer {
+  position: fixed;
+  right: 20px;
+  top: 75px;
+  background: #fff;
+  border-radius: 4px;
+  padding: 13px 12px;
+  padding-bottom: 15px;
+  z-index: 50;
+}
+
+.languagesContainer.active {
+  transform: translateY(0);
+  opacity: 1;
+  transition: all 0.25s ease;
+}
+
+.languagesContainer.hidden {
+  transform: translateY(15px);
+  opacity: 0;
+  transition: all 0.25s ease;
+}
+
+.languageRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.languageRow:hover {
+  background: #F9F5EB;
+  transition: all 0.2s ease;
+}
+
+.languageRow:hover p {
+  transform: translateY(-1px);
+  transition: all 0.2s ease
+}
+.languageRow:hover img {
+  transform: translateY(-1px);
+  transition: all 0.2s ease;
+}
+
+.languageRow p {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1B3022;
+}
+
+.navbarLanguagesIcon {
+  color: #fff;
+}
+
+.sticky .navbarLanguagesIcon {
+  color: #1B3022;
+}
+
+.sticky  .navbarLanguagesContainer p {
+  color: #1B3022;
+}
+
+.sticky .activeLink {
+  color: #1B3022 !important;
+}
+
+.sticky .navItem a:hover {
+  color: #1B3022 !important;
+}

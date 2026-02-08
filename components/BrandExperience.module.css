@@ -1,0 +1,246 @@
+.section {
+  width: 100%;
+  min-height: 100vh;
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+  background: url("/brand-section-bg.jpeg") no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.backgroundOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.contentOverlay {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Header Section --- */
+.videoTitle {
+  font-family: 'Montserrat', sans-serif;
+  color: #F9F5EB;
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.titleDivider {
+  width: 80px;
+  height: 2px;
+  background-color: #C5A059;
+  margin-bottom: 20px;
+}
+
+.videoSubtitle {
+  font-family: 'Montserrat', sans-serif;
+  color: #C5A059;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 30px;
+}
+
+/* --- Carousel Container --- */
+.carouselContainer {
+  width: 95vw;
+  max-width: 1600px;
+  overflow: hidden;
+  padding: 40px 0;
+  mask-image: linear-gradient(
+    to right, 
+    transparent 0%, 
+    black 5%, 
+    black 95%, 
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right, 
+    transparent 0%, 
+    black 5%, 
+    black 95%, 
+    transparent 100%
+  );
+}
+
+.carouselTrack {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  will-change: transform;
+}
+
+/* --- Cards --- */
+.card {
+  width: 420px;
+  height: 560px;
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+  background-color: #1B3022;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.imageContainer {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.cardImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.65);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease;
+}
+
+.card:hover .cardImage {
+  filter: brightness(0.5);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+}
+
+.cardContent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 5;
+  text-align: center;
+}
+
+.cardTitle {
+  font-family: 'Montserrat', sans-serif;
+  color: #F9F5EB;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
+
+.cardGoldLine {
+  width: 40px;
+  height: 1px;
+  background-color: #C5A059;
+  margin-bottom: 15px;
+  transition: width 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .cardGoldLine {
+  width: 120px;
+}
+
+.cardDescription {
+  font-family: 'Montserrat', sans-serif;
+  color: #F9F5EB;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  font-weight: 400;
+  opacity: 0.85;
+  max-width: 320px;
+  margin-bottom: 25px;
+  transition: opacity 0.4s ease;
+}
+
+.cardIcon {
+  color: #C5A059;
+  opacity: 0.7;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.cardFrame {
+  position: absolute;
+  border: 1px solid rgba(197, 160, 89, 0.6);
+  pointer-events: none;
+  z-index: 6;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+
+/* Tablet Optimization */
+@media (max-width: 1024px) {
+  .card {
+    width: 340px;
+    height: 500px;
+  }
+  .cardContent {
+    padding: 40px 25px;
+  }
+}
+
+/* Mobile Focus: Single Card UI */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+    background-attachment: scroll; /* Better performance on mobile */
+  }
+
+  .videoTitle {
+    font-size: 1.8rem;
+    letter-spacing: 0.2em;
+  }
+
+  .videoSubtitle {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+
+  .carouselContainer {
+    width: 100vw;
+    mask-image: none; /* Removed mask to let the single card breathe */
+    -webkit-mask-image: none;
+  }
+
+  .carouselTrack {
+    gap: 20px;
+    /* Centers the first card on the screen width */
+    padding-left: 7.5vw; 
+  }
+
+  .card {
+    width: 85vw; /* Card takes up most of the screen width */
+    height: 480px;
+  }
+
+  .cardTitle {
+    font-size: 1.2rem;
+    letter-spacing: 3px;
+  }
+
+  .cardDescription {
+    font-size: 0.8rem;
+    line-height: 1.6;
+    max-width: 90%;
+  }
+
+  .cardFrame {
+    display: none; /* Hide hover frame for touch devices */
+  }
+}

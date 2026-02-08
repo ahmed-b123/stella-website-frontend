@@ -1,0 +1,30 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.5rem 1.5rem;
+  
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  
+  /* Border & Shape */
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 100px; /* High value for the pill shape */
+  margin-bottom: 14px;
+}
+
+.text {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  font-weight: 600;
+  white-space: nowrap;
+  transform: translateY(1px);
+}
+
+.dot {
+  color: white;
+  opacity: 0.8;
+}

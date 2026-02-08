@@ -1,0 +1,55 @@
+.grid {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.card {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.03); /* Very subtle overlay */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 2rem;
+  min-width: 200px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(212, 188, 130, 0.3); /* Subtle gold glow on hover */
+}
+
+.value {
+  color: #ffffff;
+  font-family: 'Cormorant Garamond', serif; /* Matching the hero title */
+  font-size: 3.5rem;
+  font-weight: 500;
+  margin: 0 0 0.5rem 0;
+  line-height: 1;
+}
+
+.label {
+  color: rgba(255, 255, 255, 0.7);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  white-space: pre-line; /* Respects the \n in our data */
+  margin: 0;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .grid {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .card {
+    padding: 1.5rem;
+  }
+
+  .value {
+    font-size: 2.8rem;
+  }
+}

@@ -1,0 +1,46 @@
+.indicator {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2; /* Sits between the background and the UI cards */
+  transition: transform 0.3s ease;
+}
+
+.indicator:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.pinIcon {
+  color: #C5A059; /* Stella Gold */
+  filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.labelContainer {
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(4px);
+  padding: 2px 12px;
+  padding-top: 1px;
+  border-radius: 4px;
+  margin-top: 4px;
+  border: 1px solid rgba(197, 160, 89, 0.3); /* Subtle Gold border */
+}
+
+.labelText {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #F9F5EB; /* Antique Cream */
+  white-space: nowrap;
+}
+
+/* --- Mobile Responsiveness --- */
+
+/* Hide indicators on screens smaller than 768px */
+@media (max-width: 768px) {
+  .indicator {
+    display: none;
+  }
+}

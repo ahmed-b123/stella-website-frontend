@@ -1,0 +1,249 @@
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  /* Ensure the wrapper takes full width of the parent */
+  display: flex;
+  justify-content: center;
+}
+
+.viewport {
+  width: 100%;
+  overflow: hidden;
+  /* Remove padding so cards touch the edges if desired, or keep minimal */
+  padding: 5px 0; 
+}
+
+.track {
+  display: flex;
+  /* Gap decreased as requested */
+  gap: 10px; 
+  cursor: grab;
+  width: 100%;
+}
+
+.track:active {
+  cursor: grabbing;
+}
+
+/* --- CARD STYLES --- */
+.card {
+  /* Calculation to fit exactly 4 cards with 3 gaps of 1rem */
+  min-width: calc((100% - 3rem) / 4);
+  max-width: calc((100% - 3rem) / 4);
+  
+  /* Reduced height as requested */
+  height: 280px; 
+  
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px; /* Slightly tighter radius for smaller cards */
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  /* background-color: #F9F5EB; */
+  font-family: 'Montserrat', sans-serif;
+  transition: transform 0.3s ease;
+  padding: 10px;
+  background: url(/navbar-bg.jpeg) no-repeat center center;
+  background-size: cover;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.cardImage {
+  width: 100%;
+  height: 45%; /* Adjusted ratio for shorter card */
+  object-fit: cover;
+  user-select: none;
+  border-radius: 10px;
+}
+
+.cardContent {
+  padding: 1rem; /* Reduced padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 55%;
+  /* background-color: #F9F5EB; */
+}
+
+.headerRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.25rem;
+}
+
+.locationTitle {
+  font-size: 1rem; /* Slightly smaller font */
+  font-weight: 700;
+  color: #1B3022;
+  margin: 0;
+  line-height: 1.1;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.statusBadge {
+  background-color: #C5A059;
+  color: #F9F5EB;
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 3px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.address {
+  font-size: 0.75rem;
+  color: #555;
+  margin-bottom: 0.25rem;
+  line-height: 1.3;
+  /* Truncate text if it gets too long */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.infoRowContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.infoRow {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  color: #1B3022;
+}
+
+.icon {
+  width: 14px;
+  height: 14px;
+  color: #1B3022;
+}
+
+.buttonGroup {
+  display: flex;
+  gap: 0.35rem;
+  margin-top: 0;
+}
+
+.btnPrimary, .btnSecondary {
+  flex: 1;
+  padding: 0.6rem;
+  border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btnPrimary {
+  /* background-color: #1B3022;
+  color: #C5A059;
+  border: none; */
+  background: linear-gradient(90deg, #9d7c4a 0%, #d4bc82 100%);
+  color: white;
+  border: none;
+}
+
+.btnSecondary {
+  background-color: transparent;
+  color: #1B3022;
+  border: 1px solid #1B3022;
+}
+
+/* --- ARROWS OVERLAY --- */
+.navButton {
+  position: absolute;
+  top: 30%;
+  transform: translateY(-50%);
+  background-color: rgba(27, 48, 34, 1);
+  /* background: transparent; */
+  backdrop-filter: blur(4px);
+  border: 1px solid #C5A059;
+  color: #C5A059;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 20; /* Ensure it sits on top of cards */
+  transition: all 0.2s ease;
+}
+
+.navButton:hover {
+  background-color: #C5A059;
+  color: #1B3022;
+}
+
+/* Position Left Arrow */
+.navButtonLeft {
+  left: -25px; /* Slight hang off the edge or adjust to 0 for flush */
+}
+
+/* Position Right Arrow */
+.navButtonRight {
+  right: -25px;
+}
+
+/* Responsiveness: On smaller screens, show fewer cards */
+@media (max-width: 1024px) {
+  .card {
+    min-width: calc((100% - 2rem) / 3); /* 3 cards */
+    max-width: calc((100% - 2rem) / 3);
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    min-width: calc((100% - 1rem) / 2); /* 2 cards */
+    max-width: calc((100% - 1rem) / 2);
+  }
+}
+
+/* --- THE MOBILE FIX --- */
+
+@media (max-width: 1024px) {
+  .card {
+    min-width: calc((100% - 2rem) / 3);
+    max-width: calc((100% - 2rem) / 3);
+  }
+}
+
+@media (max-width: 768px) {
+  .track {
+    gap: 0; /* Remove gap to ensure clean centering if needed */
+    padding: 0 10px;
+    gap: 10px;
+  }
+
+  .card {
+    /* This ensures exactly one card is visible per "frame" */
+    min-width: 100%; 
+    max-width: 100%;
+    height: 280px; /* Keeping your requested height */
+    padding: 10px;
+    border-radius: 8px; /* Flush with edges looks cleaner for full-width cards */
+  }
+
+  .card:hover {
+    transform: translateY(0);
+  }
+
+  .cardContent {
+    padding: 1rem;
+  }
+  
+  .address {
+    white-space: normal; /* Better for single card view */
+  }
+}

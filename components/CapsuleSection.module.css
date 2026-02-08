@@ -1,0 +1,157 @@
+.sectionWrapper {
+  background: #F9F5EB;
+  padding: 100px 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
+  background: url(../public/categories-bg-2.jpeg);
+  background-size: cover;
+}
+
+.container {
+  width: 90vw;
+  max-width: 1200px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.title {
+  color: #1B3022;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.subtitle {
+  color: #C5A059;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.8;
+  font-weight: 600;
+}
+
+.divider {
+  height: 2px;
+  width: 100px;
+  background-color: #C5A059;
+  margin: 15px auto 0;
+}
+
+.carouselContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.carouselRow {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.track {
+  display: flex;
+  gap: 15px;
+  flex-shrink: 0;
+}
+
+/* Pause animation on hover for better UX */
+.carouselRow:hover .track {
+  animation-play-state: paused;
+}
+
+.moveLeft {
+  animation: scrollLeft 50s linear infinite;
+}
+
+.moveRight {
+  animation: scrollRight 50s linear infinite;
+}
+
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 15px)); }
+}
+
+@keyframes scrollRight {
+  from { transform: translateX(calc(-50% - 15px)); }
+  to { transform: translateX(0); }
+}
+
+.card {
+  width: 240px;
+  height: 404px;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #14251a;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+.overlayContent {
+  text-align: center;
+  padding: 20px;
+  transform: translateY(20px);
+  transition: transform 0.4s ease;
+}
+
+.card:hover .overlayContent {
+  transform: translateY(0);
+}
+
+.cardTitle {
+  color: #F9F5EB;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cardPrice {
+  color: #C5A059;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.customButton {
+  background: transparent;
+  border: 1px solid #F9F5EB;
+  color: #F9F5EB;
+  padding: 10px 18px;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.customButton:hover {
+  background: #F9F5EB;
+  color: #1B3022;
+}

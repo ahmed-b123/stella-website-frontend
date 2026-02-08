@@ -1,0 +1,29 @@
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #F9F5EB;
+  font-family: 'Montserrat', sans-serif;
+  color: #1B3022;
+  background: url(/navbar-bg.jpeg) no-repeat center center;
+  background-size: cover;
+  overflow-x: hidden;
+  background-attachment: fixed;
+}
+
+.mainContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px; /* Buffer for Navbar */
+  padding-bottom: 80px;
+}
+
+.container {
+  width: 90vw;
+  max-width: 1600px;
+  display: flex;
+  flex-direction: column;
+}
+

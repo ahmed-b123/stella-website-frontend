@@ -1,0 +1,153 @@
+.statsSection {
+    background-color: #F9F5EB; /* Antique Cream */
+    padding: 0 0;
+    overflow: hidden;
+    padding-top: 80px;
+    background: url(/navbar-bg.jpeg) no-repeat center center;
+    background-size: cover;
+}
+
+.container {
+    width: 90vw;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 0;
+    align-items: center;
+}
+
+/* Left Side: Card Stack */
+.leftSide {
+    position: relative;
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card {
+    position: absolute;
+    width: 220px;
+    height: 240px;
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cardTitle {
+    font-family: 'Montserrat', sans-serif;
+    color: #C5A059; /* Stella Gold */
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.cardSub {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    color: #1B3022;
+    opacity: 0.6;
+}
+
+.cardImage {
+    width: fit-content;
+    height: 140px;
+    object-fit: contain;
+
+    margin: 0 auto;
+}
+
+/* Staggered Positions */
+.card1 { left: 0; top: 50px; z-index: 1; transform: rotate(-8deg); }
+.card2 { left: 140px; top: 0; z-index: 2; transform: rotate(-4deg); }
+.card3 { left: 280px; top: 80px; z-index: 3; transform: rotate(4deg); }
+.card4 { left: 420px; top: 20px; z-index: 4; transform: rotate(8deg); }
+
+/* Right Side: Stats */
+.rightSide {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.statItem {
+    flex: 1;
+}
+
+.statValue {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    color: #1B3022; /* Deep Forest Green */
+    margin: 0;
+    font-weight: 600;
+}
+
+.statLabel {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #C5A059; /* Stella Gold */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0;
+}
+
+/* Mobile responsive */
+@media (max-width: 1024px) {
+    .container { grid-template-columns: 1fr; gap: 150px; }
+    .leftSide { height: 400px; width: 100%; transform: scale(0.8); }
+    .rightSide { margin-top: 50px; }
+}
+
+@media (max-width: 600px) {
+    .leftSide { transform: scale(0.6); }
+    .rightSide { flex-direction: column; gap: 40px; }
+}
+
+.headerContainer {
+    text-align: center;
+    margin-bottom: 30px;
+    padding: 0;
+}
+
+.mainTitle {
+    font-family: 'Montserrat', sans-serif;
+    color: #1B3022; /* Deep Forest Green */
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.divider {
+    height: 1px;
+    background-color: rgba(27, 48, 34, 0.2);
+    width: 60px;
+    margin: 5px auto;
+    margin-bottom: 15px;
+}
+
+.goldSubtitle {
+    font-family: 'Montserrat', sans-serif;
+    color: #C5A059; /* Stella Gold */
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-weight: 500;
+}
+
+
+/* Mobile fix for header */
+@media (max-width: 768px) {
+    .headerContainer {
+        margin-bottom: 40px;
+    }
+    .mainTitle {
+        font-size: 1.8rem;
+    }
+}
+

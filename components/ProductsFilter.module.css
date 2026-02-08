@@ -1,0 +1,111 @@
+.filterBar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(27, 48, 34, 0.1);
+  margin-bottom: 20px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Left Section: Info & Sort */
+.leftSection {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.itemCount {
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #1B3022;
+}
+
+.sortWrapper {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: rgba(27, 48, 34, 0.6);
+  cursor: pointer;
+}
+
+.sortValue {
+  color: #1B3022;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* Middle Section: Categories */
+.categoryList {
+  display: flex;
+  gap: 12px;
+}
+
+.catButton {
+  background: none;
+  border: 1px solid rgba(27, 48, 34, 0.1);
+  padding: 8px 16px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1B3022;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.catButtonActive {
+  background-color: #EAE3D2; /* Soft Antique Cream shade */
+  border-color: transparent;
+}
+
+.catButton:hover {
+  border-color: #C5A059;
+}
+
+/* Right Section: Grid Toggles */
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.gridLabel {
+  font-size: 0.75rem;
+  color: rgba(27, 48, 34, 0.6);
+  font-weight: 600;
+}
+
+.gridIcons {
+  display: flex;
+  gap: 8px;
+}
+
+.iconGroup {
+  cursor: pointer;
+  display: flex;
+  gap: 2px;
+  padding: 4px;
+  opacity: 0.3;
+  transition: opacity 0.2s;
+}
+
+.iconGroupActive {
+  opacity: 1;
+}
+
+.box {
+  width: 6px;
+  height: 6px;
+  background-color: #1B3022;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .categoryList {
+    display: none; /* We'll handle this with a scrollable list or drawer for mobile later */
+  }
+}

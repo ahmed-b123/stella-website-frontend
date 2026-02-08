@@ -1,0 +1,126 @@
+.gridContainer {
+  width: 100%;
+  display: grid;
+  /* Defining a 4-column layout that shifts on mobile */
+  grid-template-columns: repeat(4, 1fr);
+  /* Creating the "8 rows" structure */
+  grid-template-rows: repeat(8, minmax(100px, auto));
+  gap: 15px;
+  padding: 1rem 0;
+}
+
+/* The Large Featured Image on the Left */
+.heroCard {
+  grid-column: span 1;
+  grid-row: span 4; /* Spans half of our 8-row height */
+  position: relative;
+  overflow: hidden;
+  background-color: #EAE3D2;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.heroCard:hover .heroImage {
+  transform: scale(1.03);
+}
+
+/* Standard Product Card */
+.productCard {
+  grid-column: span 1;
+  grid-row: span 2; /* Takes up 2 rows of height */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1.1;
+  background-color: #EAE3D2;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Badges (Hot, Heart) */
+.badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #000;
+  color: #fff;
+  padding: 4px 10px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.wishlistBtn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: white;
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #1B3022;
+}
+
+/* Product Info */
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.productName {
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #1B3022;
+}
+
+.details {
+  font-size: 0.75rem;
+  color: rgba(27, 48, 34, 0.6);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 1024px) {
+  .gridContainer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+  .heroCard {
+    grid-column: span 2;
+    grid-row: span 2;
+    aspect-ratio: 16/9;
+  }
+}

@@ -1,0 +1,42 @@
+.pageWrapper {
+  background-color: #F9F5EB; /* Antique Cream */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: url(../public/navbar-bg.jpeg) no-repeat center center;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.mainContent {
+  flex: 1; /* Pushes footer to bottom if content is short */
+  padding-top: 50px;
+}
+
+.productPlaceholder {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  padding-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh; /* Keeps the page from feeling empty */
+}
+
+.loadingText {
+  font-family: 'Montserrat', sans-serif;
+  color: #1B3022; /* Forest Green */
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  opacity: 0.4;
+}
+
+.goldDivider {
+  width: 40px;
+  height: 1px;
+  background-color: #C5A059; /* Stella Gold */
+  margin-top: 20px;
+}

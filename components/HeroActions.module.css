@@ -1,0 +1,186 @@
+.container {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.primaryBtn {
+  background: linear-gradient(90deg, #9d7c4a 0%, #d4bc82 100%);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: filter 0.3s ease;
+}
+
+.primaryBtn:hover {
+  filter: brightness(1.1);
+}
+
+.primaryBtn {
+  /* --- Core Styling --- */
+  /* We use a 3-stop gradient to create a hidden "reflection" line */
+  background: linear-gradient(
+    110deg, 
+    #9d7c4a 0%, 
+    #C5A059 45%, 
+    #ffeeb0 50%, /* The "Shine" Line */
+    #C5A059 55%, 
+    #9d7c4a 100%
+  );
+
+  /* Make the background huge so we can slide it */
+  background-size: 250% 100%;
+  background-position: 100% 0; 
+
+  color: white;
+  padding: 9px 22px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+
+  /* Using your preferred font */
+  font-family: 'Montserrat', sans-serif; 
+  font-weight: 600; /* Bumped slightly for better read on gold */
+  margin-left: 0.7rem;
+
+  /* --- Animation Setup --- */
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); /* Smooth, snappy timing */
+  box-shadow: 0 0 0 rgba(197, 160, 89, 0);
+}
+
+.primaryBtn:hover {
+  /* 1. The Sweep: Move the gradient to pull the shine across */
+  background-position: 0 0; 
+
+  /* 2. The Lift: Raise the button and add a gold glow */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -5px rgba(197, 160, 89, 0.5);
+
+  /* 3. The Cinematic Text: subtle expansion */
+  letter-spacing: 0.05em;
+
+  /* Optional: Make the white text pop more against the shine */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Optional: Active state for clicking (press down effect) */
+.primaryBtn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px -3px rgba(197, 160, 89, 0.5);
+}
+
+.secondaryBtn {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  color: white;
+  padding: 12px 24px;
+  /* Remove standard border to use the custom one */
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  overflow: hidden; /* Clips the "pulse" and "shine" */
+
+  /* Preferred Font */
+  font-family: 'Montserrat', sans-serif;
+
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+/* --- The Liquid Shine Layer --- */
+.secondaryBtn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 300%;
+  /* A rotating sweep of gold light */
+  background: conic-gradient(
+    from 0deg,
+    transparent 0%,
+    transparent 40%,
+    #C5A059 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+/* --- The Ghost Pulse (The exotic part) --- */
+.secondaryBtn::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid #C5A059;
+  border-radius: 6px;
+  opacity: 0;
+  transform: scale(1);
+  transition: all 0.6s ease;
+}
+
+.btnText {
+  position: relative;
+  z-index: 2; /* Keep text above the shine */
+}
+
+/* --- HOVER EFFECTS --- */
+
+.secondaryBtn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(197, 160, 89, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.secondaryBtn:hover::before {
+  opacity: 1;
+  animation: rotateShine 3s linear infinite;
+}
+
+.secondaryBtn:hover::after {
+  /* This creates the "Pulse" that shoots outward once */
+  animation: ghostPulse 1s cubic-bezier(0, 0, 0.2, 1) forwards;
+}
+
+/* --- ANIMATIONS --- */
+
+@keyframes rotateShine {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes ghostPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.4, 1.8);
+    opacity: 0;
+  }
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .primaryBtn, .secondaryBtn {
+    width: 100%;
+    text-align: center;
+  }
+}

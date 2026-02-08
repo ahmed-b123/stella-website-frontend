@@ -1,0 +1,170 @@
+.section {
+  padding: 10rem 5%;
+  background-color: #fcfbf7; /* Off-white for a gallery feel */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12rem; /* Large gaps for luxury feel */
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+/* Image Styling */
+.imageSide {
+  flex: 1;
+  position: relative;
+}
+
+.imageWrapper {
+  position: relative;
+  border-radius: 4px; /* Minimal rounding for editorial look */
+  overflow: visible;
+}
+
+.mainImg {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  filter: grayscale(0.2);
+  transition: filter 0.5s ease;
+}
+
+.row:hover .mainImg {
+  filter: grayscale(0);
+}
+
+.imageFloatingCard {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  background: #05140e;
+  color: #d4bc82;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 20px 20px 60px rgba(0,0,0,0.1);
+}
+
+/* Text Styling */
+.textSide {
+  flex: 1;
+}
+
+.tag {
+  color: #9d7c4a;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-family: 'Display', serif;
+  font-size: 3.5rem;
+  color: #05140e;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  max-width: 450px;
+}
+
+/* Modern Button Styling */
+.modernButton {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  group: hover;
+}
+
+.btnText {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 800;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #05140e;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.btnText::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #05140e;
+  transition: width 0.3s ease;
+}
+
+.iconCircle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(5, 20, 14, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #05140e;
+  transition: all 0.3s ease;
+}
+
+.modernButton:hover .btnText::after {
+  width: 100%;
+}
+
+.modernButton:hover .iconCircle {
+  background-color: #05140e;
+  color: #f2f0e4;
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 900px) {
+  .row, .reverse {
+    flex-direction: column;
+    text-align: center;
+    gap: 4rem;
+  }
+  .imageFloatingCard {
+    right: 50%;
+    transform: translateX(50%);
+  }
+  .description {
+    margin: 0 auto 3rem;
+  }
+  .modernButton {
+    justify-content: center;
+  }
+}

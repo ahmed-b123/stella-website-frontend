@@ -1,0 +1,62 @@
+.pageCanvas {
+  position: relative;
+  width: 100vw;
+  /* Use dvh (dynamic viewport height) to account for mobile browser toolbars */
+  height: 100vh; 
+  height: 100dvh; 
+  overflow: hidden;
+  background-color: #1b3022; /* Deep Forest Green */
+  color: #f9f5eb; /* Antique Cream */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  background: url(/locations-bg-1.jpeg) no-repeat center center;
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Container for bottom UI elements */
+.contentWrapper {
+  width: 95vw;
+  max-width: 1600px;
+  position: absolute;
+  bottom: 20px; 
+  left: 0;
+  right: 0;
+  padding: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  gap: 0; 
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.reservedSlot {
+  width: 100%;
+  /* Flex container to hold Bar and Carousel */
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* --- Mobile Responsiveness --- */
+
+@media (max-width: 768px) {
+  .contentWrapper {
+    width: 100vw;
+    /* Bring the content slightly higher on mobile for better thumb reach */
+    bottom: 30px; 
+    padding: 0 5px;
+    gap: 1rem;
+  }
+
+  .reservedSlot {
+    /* Adjust height dynamically or let content define it */
+    height: 65vh; 
+    max-width: 500px;
+    justify-content: flex-end;
+  }
+}

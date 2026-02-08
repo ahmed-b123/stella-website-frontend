@@ -1,0 +1,187 @@
+.section {
+  width: 100%;
+  padding: 100px 20px;
+  background-color: #F9F5EB;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: url(../public/categories-bg-2.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mainTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #1B3022;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.divider {
+  width: 80px;
+  height: 2px;
+  background-color: #C5A059; /* Stella Gold */
+  margin-bottom: 20px;
+}
+
+.mainSubtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: #1B3022;
+  opacity: 0.7;
+  max-width: 600px;
+  line-height: 1.6;
+}
+
+.grid {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  width: 100%;
+  gap: 20px;
+}
+
+.card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  padding-bottom: 80px; 
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  transition: background-color 0.4s ease;
+}
+
+.card:hover {
+  background-color: rgba(27, 48, 34, 0.02);
+}
+
+.imageWrapper {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1 / 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 15px 25px rgba(0,0,0,0.1));
+}
+
+.cardTitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #C5A059; /* Stella Gold */
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.cardSubtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  color: #1B3022;
+  opacity: 0.8;
+  max-width: 260px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.buttonWrapper {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.primaryBtn {
+  background: linear-gradient(90deg, #9d7c4a 0%, #d4bc82 100%);
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  transition: filter 0.3s ease;
+  white-space: nowrap;
+}
+
+/* --- MOBILE & TABLET ADAPTATION --- */
+
+@media (max-width: 1024px) {
+  .grid {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  .card {
+    flex: 0 0 45%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 100px 20px; 
+  }
+
+  .header {
+    margin-bottom: 20px; 
+  }
+
+  .grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Slight gap back in to separate the cards */
+  }
+
+  .card {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 400px;
+    /* Added bit of top padding (20px) and kept bottom space for button */
+    padding: 20px 20px 75px 20px; 
+    border-bottom: none;
+  }
+
+  .imageWrapper {
+    max-width: 170px;
+    margin-bottom: 0; /* Resetting negative margin to allow for title gap */
+  }
+
+  .cardTitle {
+    font-size: 1.15rem;
+    margin-top: 15px; /* New margin-top for titles */
+    margin-bottom: 6px;
+  }
+
+  .cardSubtitle {
+    font-size: 0.8rem;
+    margin-bottom: 12px;
+  }
+
+  .buttonWrapper {
+    bottom: 20px;
+  }
+}

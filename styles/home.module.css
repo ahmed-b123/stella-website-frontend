@@ -1,0 +1,207 @@
+.banner {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 120px 5% 220px;
+  position: relative; /* Container for the absolute video */
+  overflow: hidden;
+  background-color: #0b1d16; /* Fallback brand color */
+}
+
+.bannerVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1; /* Lowest layer */
+}
+
+.bannerOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* A radial or linear gradient helps focus the eye on the center text */
+  /* background: radial-gradient(
+    circle at center, 
+    rgba(0, 0, 0, 0.2) 0%, 
+    rgba(0, 0, 0, 0.6) 100%
+  ); */
+  z-index: 2;
+}
+
+.bannerContent {
+  position: relative; /* Lifts content above the video */
+  max-width: 1200px;
+  width: 100%;
+  z-index: 3; /* Highest layer */
+}
+
+.statWrapper {
+  margin-top: 5rem;
+  position: relative;
+  z-index: 3;
+}
+
+.bannerVideo, .bgVideo {
+  position: absolute;
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  /* The Magic Fix: Scale and Offset */
+  transform: translate(-50%, -50%) scale(1.05); 
+  
+  /* Optimization: Prevents the video from looking 'shaky' during scale */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  
+  z-index: 1;
+}
+
+.heroDivider {
+  height: 500px;
+  width: 99.3vw;
+  /*background: #1B3022;*/
+  position: absolute;
+  top: 100vh;
+  left: 0;
+  z-index: 20;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  /* The Fluid Blur Mask */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  
+  /* This is the secret for the 'shoreline' effect */
+  mask-image: linear-gradient(
+    to bottom,
+    black 0%,
+    transparent 20%,
+    transparent 40%,
+    black 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%, 
+    black 20%, 
+    black 40%, 
+    transparent 100%
+  );
+}
+
+.heroDividerContainer {
+  height: 90%;
+  width: 100%;
+  position: relative;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  overflow: hidden;
+}
+
+.leavesRight {
+  position: absolute;
+  right: 0;
+  top: 180px;
+}
+
+.leavesRightReverse {
+  position: absolute;
+  right: 0;
+  top: -15px;
+  transform: scaleY(-1);
+}
+
+.leavesLeft {
+  position: absolute;
+  left: 0;
+  top: 180px;
+  scale: -1 1;
+}
+
+.leavesLeftReverse {
+  position: absolute;
+  left: 0;
+  top: -15px;
+  scale: -1 -1;
+}
+
+.bean1 {
+  position: absolute;
+  left: 10%;
+  top: 40px;
+  transform: rotate(45deg);
+}
+
+.bean2 {
+  position: absolute;
+  left: 20%;
+  top: 140px;
+  transform: rotate(15deg);
+}
+
+.bean3 {
+  position: absolute;
+  left: 30%;
+  top: 170px;
+  transform: rotate(95deg);
+}
+
+.bean4 {
+  position: absolute;
+  left: 40%;
+  top: 170px;
+  transform: rotate(45deg);
+}
+
+.bean5 {
+  position: absolute;
+  left: 30%;
+  top: 40px;
+  transform: rotate(66deg);
+}
+
+.bean6 {
+  position: absolute;
+  left: 50%;
+  top: 50px;
+  transform: rotate(45deg);
+}
+
+.bean7 {
+  position: absolute;
+  left: 60%;
+  top: 86px;
+  transform: rotate(66deg);
+}
+
+.bean8 {
+  position: absolute;
+  left: 70%;
+  top: 130px;
+  transform: rotate(103deg);
+}
+
+.bean9 {
+  position: absolute;
+  left: 80%;
+  top: 150px;
+  transform: rotate(99deg);
+}
+
+.bean10 {
+  position: absolute;
+  left: 90%;
+  top: 134px;
+  transform: rotate(104deg);
+}

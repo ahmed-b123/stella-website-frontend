@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.imageWrapper {
+  width: 42px; /* Adjust based on your rectangular image proportions */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.awardImage {
+  width: 100%;
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.rating {
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+.divider {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 300;
+}
+
+.text {
+  font-size: 0.85rem;
+  font-weight: 400;
+  text-transform: lowercase; /* Matches the style in your screenshot */
+  letter-spacing: 0.02em;
+}
